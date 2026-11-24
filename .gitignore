@@ -1,2 +1,6 @@
 .vscode/
 lib/
+pom.xml
+.idea/
+main/main.iml
+target/
