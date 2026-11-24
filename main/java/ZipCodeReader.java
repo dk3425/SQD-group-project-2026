@@ -13,7 +13,7 @@ public class ZipCodeReader {
 
     public List<ZipCode> readZipCodes(){
         if (filename == null || filename.isBlank())
-            throw new NullPointerException("File name is not valid.");
+            throw new IllegalArgumentException("File name is not valid.");
 
         List<ZipCode> zipCodes = new ArrayList<>();
         try (Scanner scanner = new Scanner(new File(filename))) {

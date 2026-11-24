@@ -84,7 +84,7 @@ public class RestaurantProcessor {
     }
 
     static boolean sameText(String a, String b) {
-        return a != null && b != null && a.equals(b);
+        return a != null && b != null && a.trim().equalsIgnoreCase(b.trim());
     }
 
     private static void requireNonBlank(String value, String label) {

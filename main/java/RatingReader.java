@@ -12,7 +12,7 @@ public class RatingReader {
     }
 
     public List<Rating> readRatings(){
-        if (filename.isBlank())
+        if (filename == null || filename.isBlank())
             throw new IllegalArgumentException("File name is not valid.");
 
         List<Rating> ratings = new ArrayList<>();
@@ -48,7 +48,9 @@ public class RatingReader {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 tok = line.split(",");
-
+                if (tok.length < 5) {
+                    continue;
+                }
 
                 Rating r = new Rating();
                 r.restaurant = tok[restaurantIndex].trim();

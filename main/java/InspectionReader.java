@@ -53,6 +53,20 @@ public class InspectionReader {
                 }
             }
 
+            if (
+                restaurantIndex == -1 ||
+                boroughIndex == -1 ||
+                streetIndex == -1 ||
+                zipIndex == -1 ||
+                violationIndex == -1 ||
+                flagIndex == -1 ||
+                scoreIndex == -1 ||
+                gradeIndex == -1 ||
+                gradeDateIndex == -1
+            ) {
+                throw new IllegalStateException("CSV header is missing required columns.");
+            }
+
 
 
             while (scanner.hasNextLine()) {
@@ -81,7 +95,7 @@ public class InspectionReader {
             }
 
         } catch (FileNotFoundException e){
-            throw new IllegalArgumentException("File not found: " + filename);
+            throw new IllegalStateException("File not found: " + filename);
         }
 
         return inspections;
