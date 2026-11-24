@@ -92,4 +92,19 @@ public class RestaurantProcessor {
             throw new IllegalArgumentException(label + " must not be empty.");
         }
     }
+
+    //Part 1.2 getRestaurantInfo method
+    public Optional<RestaurantSummary> getRestaurantInfo(String name) {
+        requireNonBlank(name, "Restaurant name");
+
+        for (Rating r: ratings){
+            if (sameText(r.restaurant, name)){
+                return Optional.of(buildSummary(r));
+            }
+        }
+        return Optional.empty();
+
+    }
+
+
 }

@@ -16,16 +16,18 @@ public class UI {
         System.out.println(inspection.get());
     }
 
+    //Edited for Part 1.2
     public void doRestaurantInfo(Scanner scanner){
         System.out.println("Enter a restaurant name: ");
         String name = scanner.nextLine().trim();
-        Optional<RestaurantSummary> summary = Optional.empty();
-        for (Rating r : processor.ratings) {
-            if (RestaurantProcessor.sameText(r.restaurant, name)) {
-                summary = Optional.of(processor.buildSummary(r));
-                break;
-            }
-        }
+        //Optional<RestaurantSummary> summary = Optional.empty();
+        //for (Rating r : processor.ratings) {
+        //    if (RestaurantProcessor.sameText(r.restaurant, name)) {
+        //        summary = Optional.of(processor.buildSummary(r));
+        //        break;
+        //    }
+        //}
+        Optional<RestaurantSummary> summary = processor.getRestaurantInfo(name);
         System.out.println(summary.get());
     }
 
