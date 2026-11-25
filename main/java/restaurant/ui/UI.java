@@ -18,14 +18,34 @@ public class UI {
     public void doInspectionForRestaurant(Scanner scanner){
         System.out.println("Enter a restaurant name: ");
         String name = scanner.nextLine().trim();
+
+        // Part 1.5, added for blank name case. Processor throws error on blank name case.
+        if (name.isBlank()) {
+            System.out.println("No data found");
+            return;
+        }
+
         Optional<Inspection> inspection = processor.getInspectionForRestaurant(name.toUpperCase());
-        System.out.println(inspection.get());
+
+        // Part 1.5, add check to print No data found if inspection does not exist. 
+        if (!inspection.isPresent()) {
+            System.out.println("No data found");
+        } else {
+            System.out.println(inspection.get());
+        }
     }
 
     //Edited for Part 1.2
     public void doRestaurantInfo(Scanner scanner){
         System.out.println("Enter a restaurant name: ");
         String name = scanner.nextLine().trim();
+
+        // Part 1.5, added for blank name case. Processor throws error on blank name case.
+        if (name.isBlank()) {
+            System.out.println("No data found");
+            return;
+        }
+
         //Optional<restaurant.common.RestaurantSummary> summary = Optional.empty();
         //for (restaurant.common.Rating r : processor.ratings) {
         //    if (RestaurantProcessor.sameText(r.restaurant, name)) {
@@ -34,14 +54,32 @@ public class UI {
         //    }
         //}
         Optional<RestaurantSummary> summary = processor.getRestaurantInfo(name);
-        System.out.println(summary.get());
+
+        // Part 1.5, add check to print No data found if summary does not exist. 
+        if (!summary.isPresent()) {
+            System.out.println("No data found");
+        } else {
+            System.out.println(summary.get());
+        }
     }
 
     public void doRestaurantsInNeighborhood(Scanner scanner){
         System.out.println("Enter a neighborhood name: ");
         String name = scanner.nextLine().trim();
+
+        // Part 1.5, added for blank name case. Processor throws error on blank name case.
+        if (name.isBlank()) {
+            System.out.println("No data found");
+            return;
+        }
+
         List<RestaurantSummary> list = processor.getRestaurantsInNeighborhood(name);
-        list.forEach(r -> System.out.println(r));
+        // Part 1.5, add check to print No data found if list is empty.
+        if (list.isEmpty()) {
+            System.out.println("No data found");
+        } else {
+            list.forEach(r -> System.out.println(r));
+        }
     }
 
     public void showMenu(){
@@ -54,15 +92,23 @@ public class UI {
         while (true){
             showMenu();
             System.out.println("Hello! Please select an option: ");
-            int option = Integer.parseInt(scanner.nextLine().trim());
-            if (option == 1){
-                doInspectionForRestaurant(scanner);
-            } else if (option == 2){
-                doRestaurantInfo(scanner);
-            } else if (option == 3){
-                doRestaurantsInNeighborhood(scanner);
-            } else if (option == 0){
-                break;
+
+            // Updated for part 1.5: handle invalid inputs (wrap the parse int in a try/catch)
+            try {
+                int option = Integer.parseInt(scanner.nextLine().trim());
+                if (option == 1){
+                    doInspectionForRestaurant(scanner);
+                } else if (option == 2){
+                    doRestaurantInfo(scanner);
+                } else if (option == 3){
+                    doRestaurantsInNeighborhood(scanner);
+                } else if (option == 0){
+                    break;
+                } else {
+                    System.out.println("Invalid selection");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid selection");
             }
         }
 
