@@ -16,6 +16,7 @@ public class RatingReader {
     }
 
     public List<Rating> readRatings(){
+        // Part 1.1 bug fixes
         if (filename == null || filename.isBlank())
             throw new IllegalArgumentException("File name is not valid.");
 
@@ -52,7 +53,9 @@ public class RatingReader {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 tok = line.split(",");
-                if (tok.length < 5) {
+                // Part 1.1 bug fixes
+                if (tok.length <= restaurantIndex || tok.length <= zipIndex || tok.length <= cuisineIndex ||
+                        tok.length <= ratingIndex || tok.length <= priceLevelIndex) {
                     continue;
                 }
 

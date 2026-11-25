@@ -89,6 +89,7 @@ public class RestaurantProcessor {
     }
 
     static boolean sameText(String a, String b) {
+        // Part 1.1 bug fixes
         return a != null && b != null && a.trim().equalsIgnoreCase(b.trim());
     }
 

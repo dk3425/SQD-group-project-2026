@@ -16,6 +16,7 @@ public class ZipCodeReader {
     }
 
     public List<ZipCode> readZipCodes(){
+        // Part 1.1 bug fixes
         if (filename == null || filename.isBlank())
             throw new IllegalArgumentException("File name is not valid.");
 

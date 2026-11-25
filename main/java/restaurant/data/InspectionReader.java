@@ -57,6 +57,7 @@ public class InspectionReader {
                 }
             }
 
+            // Part 1.1 bug fixes
             if (
                 restaurantIndex == -1 ||
                 boroughIndex == -1 ||
@@ -99,6 +100,7 @@ public class InspectionReader {
             }
 
         } catch (FileNotFoundException e){
+            // Part 1.1 bug fixes
             throw new IllegalStateException("File not found: " + filename);
         }
 
