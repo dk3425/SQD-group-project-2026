@@ -1,4 +1,6 @@
-/** What the UI receives for features 2 and 3: one restaurant with both of its ratings. */
+package restaurant.common;
+
+/** What the restaurant.ui.UI receives for features 2 and 3: one restaurant with both of its ratings. */
 public class RestaurantSummary {
     public final String restaurant;
     public final String street;

@@ -1,3 +1,7 @@
+package restaurant.data;
+
+import restaurant.common.Review;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;

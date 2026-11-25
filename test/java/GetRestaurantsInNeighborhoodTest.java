@@ -1,9 +1,17 @@
+import restaurant.common.Inspection;
+import restaurant.common.Rating;
+import restaurant.common.RestaurantSummary;
+import restaurant.common.ZipCode;
+import restaurant.data.InspectionReader;
+import restaurant.data.RatingReader;
+import restaurant.data.ZipCodeReader;
+import restaurant.processor.RestaurantProcessor;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 class GetRestaurantsInNeighborhoodTest {
 

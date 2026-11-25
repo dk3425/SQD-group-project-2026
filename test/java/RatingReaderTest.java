@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import restaurant.common.Rating;
+import restaurant.data.RatingReader;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,3 +1,7 @@
+package restaurant.data;
+
+import restaurant.common.ZipCode;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

@@ -1,3 +1,5 @@
+package restaurant.common;
+
 public class Review {
 
     public String restaurant;

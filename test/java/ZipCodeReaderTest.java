@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import restaurant.common.ZipCode;
+import restaurant.data.ZipCodeReader;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -126,7 +128,7 @@ class ZipCodeReaderTest {
     // ------------------------------------------------------------------
 
     /**
-     * Documents current behavior: unlike RatingReader and InspectionReader, this reader
+     * Documents current behavior: unlike restaurant.data.RatingReader and restaurant.data.InspectionReader, this reader
      * does NOT trim values, so surrounding whitespace is kept. RestaurantProcessor trims
      * zips and ignores case/whitespace on neighborhoods, so this is harmless downstream.
      * If you add trim() to the reader, update this test.

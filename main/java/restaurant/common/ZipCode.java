@@ -1,3 +1,5 @@
+package restaurant.common;
+
 public class ZipCode {
     // nyc-zip-codes.csv columns: borough, neighborhood, zipcode
 

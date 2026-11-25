@@ -1,3 +1,5 @@
+package restaurant.common;
+
 public class Inspection {
     public String restaurant;
     public String borough;

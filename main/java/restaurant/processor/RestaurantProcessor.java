@@ -1,3 +1,13 @@
+package restaurant.processor;
+
+import restaurant.common.Inspection;
+import restaurant.common.Rating;
+import restaurant.common.RestaurantSummary;
+import restaurant.common.ZipCode;
+import restaurant.data.InspectionReader;
+import restaurant.data.RatingReader;
+import restaurant.data.ZipCodeReader;
+
 import java.util.*;
 
 
@@ -51,12 +61,7 @@ public class RestaurantProcessor {
             }
         }
 
-        results.sort(new Comparator<RestaurantSummary>() {
-            @Override
-            public int compare(RestaurantSummary a, RestaurantSummary b) {
-                return a.restaurant.compareToIgnoreCase(b.restaurant);
-            }
-        });
+        results.sort((a, b) -> a.restaurant.compareToIgnoreCase(b.restaurant));
         return results;
     }
 

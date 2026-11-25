@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import restaurant.common.Inspection;
+import restaurant.data.InspectionReader;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -229,7 +231,7 @@ class InspectionReaderTest {
 
     @Test
     void readInspections_blankTrailingGradeAndDate_areKeptAsEmptyStrings() throws IOException {
-        // Unlike RatingReader, this reader splits with limit -1, so trailing blanks survive.
+        // Unlike restaurant.data.RatingReader, this reader splits with limit -1, so trailing blanks survive.
         // This matches real data: pending inspections have no grade or grade date.
         String file = writeCsv(
                 HEADER,

@@ -1,3 +1,9 @@
+package restaurant.ui;
+
+import restaurant.processor.RestaurantProcessor;
+import restaurant.common.Inspection;
+import restaurant.common.RestaurantSummary;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -20,8 +26,8 @@ public class UI {
     public void doRestaurantInfo(Scanner scanner){
         System.out.println("Enter a restaurant name: ");
         String name = scanner.nextLine().trim();
-        //Optional<RestaurantSummary> summary = Optional.empty();
-        //for (Rating r : processor.ratings) {
+        //Optional<restaurant.common.RestaurantSummary> summary = Optional.empty();
+        //for (restaurant.common.Rating r : processor.ratings) {
         //    if (RestaurantProcessor.sameText(r.restaurant, name)) {
         //        summary = Optional.of(processor.buildSummary(r));
         //        break;

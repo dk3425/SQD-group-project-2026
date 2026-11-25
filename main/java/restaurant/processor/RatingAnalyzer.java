@@ -1,3 +1,8 @@
+package restaurant.processor;
+
+import restaurant.common.Review;
+import restaurant.data.ReviewReader;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;

@@ -1,3 +1,5 @@
+package restaurant.common;
+
 public class Rating {
     public String restaurant;
     public String zip;

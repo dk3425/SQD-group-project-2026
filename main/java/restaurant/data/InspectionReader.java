@@ -1,3 +1,7 @@
+package restaurant.data;
+
+import restaurant.common.Inspection;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
